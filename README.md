@@ -23,3 +23,18 @@ Below are some of the key takeaways I found throughout the duration of the cours
 - Updating 'state on a component causes the component to (almost) instantly rerender
 - State must be initialized when a component is created
 - State can only be updated using the funciton 'setState'
+
+### Component Lifecycle Methods
+
+- Over time this is the progression of lifecycle methods.. there are more but these are the main ones
+  - constructor
+    - Good place to do one-time setup
+    - Best practices say to do data-loading elsewhere
+  - render
+    - Avoid doing anything besides returning JSX
+  - componentDidMount (content visible on screen)
+    - Good place to do data-loading
+  - componentDidUpdate (Sit and wait for updates...)
+    - Good place to do more data loading when state/props change
+  - componentWillUnmount (Sit and wait until this component is no longer shown)
+    - Good place to do cleanup (especially for non-React stuff)

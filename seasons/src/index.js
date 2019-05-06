@@ -8,7 +8,9 @@ class App extends React.Component {
 
 		// Only time we do direct assignment.
 		this.state = { lat: null, errorMessage: "" };
+	}
 
+	componentDidMount() {
 		window.navigator.geolocation.getCurrentPosition(
 			position => {
 				// need to call setState. No direct assignments!
@@ -17,6 +19,11 @@ class App extends React.Component {
 			err => this.setState({ errorMessage: err.message })
 		);
 	}
+
+	componentDidUpdate() {
+		console.log("Update!");
+	}
+
 	//React says we must define render!
 	render() {
 		if (this.state.errorMessage && !this.state.lat) {
