@@ -14,7 +14,7 @@ class App extends React.Component {
 	}
 
 	componentDidUpdate() {
-		console.log("Update!");
+		console.log("Not needed for this project!");
 	}
 
 	renderContent() {
